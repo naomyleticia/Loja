@@ -25,10 +25,10 @@
                     <a class="nav-link" href="/formulario_item">Item</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/listar_pedidos">Lista de Compras</a>
+                    <a class="nav-link" href="/listarPedidos">Lista de Compras</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">Realiza Compras</a>
+                        <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">Compras</a>
                     </li>
             </ul>
         </div>
@@ -38,7 +38,7 @@
         <p th:text="${mensagem}"></p>
         <form method="POST" action="#" th:action="@{/novo_item}" th:object="${item}">
             <div class="form-group">
-                <label for="nome">NOME:</label>
+                <label for="nome">nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome"
                     placeholder="Nome do item">
                 <p th:if="${#fields.hasErrors('nome')}" th:errors="${item.nome}">Nome Error</p>  

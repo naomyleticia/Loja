@@ -35,10 +35,11 @@ public class ControladorVender {
         ModelAndView retorno = new ModelAndView("vender.html");
         Iterable<Item> itens = repositorioItem.findAll();
         Iterable<Cliente> clientes = repositorioCliente.findAll();
-
+        Iterable<Pedido> pedidos = repositioPedido.findAll();
+        retorno.addObject("pedidos", pedidos);
         retorno.addObject("itens", itens);
         retorno.addObject("clientes", clientes);
-
+        
         return retorno;
     }
 

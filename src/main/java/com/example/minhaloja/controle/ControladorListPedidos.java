@@ -14,9 +14,9 @@ public class ControladorListPedidos {
     @Autowired
     RepositorioPedido repositorioPedido;
 
-    @RequestMapping("/listar_pedidos")
+    @RequestMapping("/listarPedidos")
     public ModelAndView listarPedidos() {
-        ModelAndView retorno = new ModelAndView("listarPedidos");
+        ModelAndView retorno = new ModelAndView("listarPedidos.html");
 
         Iterable<Pedido> pedidos = repositorioPedido.findAll();
 
