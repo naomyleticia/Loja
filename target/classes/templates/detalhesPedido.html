@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Cadastro de Itens</title>
+
+  <style>
+    scroll-container {
+      display: block;
+      height: 400px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    scroll-page {
+      display: flex;
+      font-size: 1em;
+    }
+
+    .fontSize {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navBar">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">LOJA<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/formulario_cliente">CLIENTE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/formulario_item">ITEM</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar_pedidos">LISTA DE COMPRAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">|</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">REALIZAR COMPRAR</a>
+                </li>
+        </ul>
+    </div>
+</nav>
+
+  <br>
+  <div class="container card" th:Object="${pedido}">
+    <p th:text="${mensagem}"></p>
+
+    <h3>LISTA DO PEDIDO</h3>
+    <br>
+
+    <ul class="list-group">
+      <li class="list-group-item"> <span style="font-weight: bold " th:text="'Pedido número: ' + ${pedido.id} "></span>
+      </li>
+    </ul>
+
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 90%">ITEM</th>
+          <th scope="col" style="width: 10%">VALOR</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr th:each="itens : ${pedido.itens}">
+          <td> <span th:text="${itens.nome}"></span> </td>
+          <td> <span th:text="'R$ ' +${itens.preco}"></span> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="list-group list-group-item">
+      <thead>
+          <th scope="col" style="width: 90%"></th>
+          <th scope="col" style="width: 10%;"></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span th:text="${'Cliente: ' +pedido.cliente.nome}"></span> </td>
+          <td>TOTAL R$: </td>
+          <td><span th:text="${pedido.valor}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</body>
+
+</html>

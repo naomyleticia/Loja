@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Cadastro de Itens</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navBar">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">LOJA<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/formulario_cliente">CLIENTE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/formulario_item">ITEM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listar_pedidos">LISTA DE COMPRAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">|</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">REALIZAR COMPRAR</a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <p th:text="${mensagem}"></p>
+        <form method="POST" action="#" th:action="@{/novo_item}" th:object="${item}">
+            <div class="form-group">
+                <label for="nome">NOME:</label>
+                <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome"
+                    placeholder="Nome do item">
+                <p th:if="${#fields.hasErrors('nome')}" th:errors="${item.nome}">Nome Error</p>  
+            </div>
+            <div class="form-group">    
+                <label for="preco">PREÇO:</label>
+                <input type="text" class="form-control" id="preco" name="preco" placeholder="Preço do item">
+                 <p th:if="${#fields.hasErrors('preco')}" th:errors="${item.preco}">Preco Error</p> 
+            </div>
+            <button type="submit" class="btn btn-primary">CADASTRAR</button>
+            <button type="submit" class="btn btn-primary">ATUALIZAR ITEM</button>
+        </form>
+    </div>
+</body>
+
+</html>
