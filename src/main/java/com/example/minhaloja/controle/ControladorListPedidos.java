@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-public class ControladorListarPedidos {
+public class ControladorListPedidos {
 
     @Autowired
     RepositorioPedido repositorioPedido;

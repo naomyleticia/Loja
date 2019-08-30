@@ -12,10 +12,8 @@
 
   <style>
     scroll-container {
-      display: block;
-      height: 400px;
-      overflow-y: auto;
-      scroll-behavior: smooth;
+      display: contents;
+      height: 200px;
     }
 
     scroll-page {
@@ -31,23 +29,23 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navBar">
+  <nav class="navbar navbar-expand-lg navbar bg-danger" th:fragment="navBar">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">LOJA<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Loja<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/formulario_cliente">CLIENTE</a>
+                <a class="nav-link" href="/formulario_cliente">Cliente</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/formulario_item">ITEM</a>
+                <a class="nav-link" href="/formulario_item">Item</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/listar_pedidos">LISTA DE COMPRAS</a>
+                <a class="nav-link" href="/listar_pedidos">Lista de Itens</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">REALIZAR COMPRA</a>
+                    <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">Realiza Compras</a>
                 </li>
         </ul>
     </div>
