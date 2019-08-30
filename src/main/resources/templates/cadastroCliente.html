@@ -27,7 +27,7 @@
                     <a class="nav-link" href="/listar_pedidos">Lista de Compras</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">Compras</a>
+                        <a class="nav-link" style="font-weight: bold; color: white" href="/vender">Compras</a>
                 </li>
             </ul>
         </div>
@@ -48,8 +48,8 @@
                 th:field="*{endereco}" th:value="${nome}">
                 <p th:if="${#fields.hasErrors('endereco')}" th:errors="${cliente.endereco}">Name Error</p>    
             </div>
-            <button type="submit" class="btn btn-primary">CADASTRAR</button>
-            <button type="submit" class="btn btn-primary">ATUALIZAR DADOS</button>
+            <button type="submit" class="btn btn-primary">cadastre-se</button>
+            <button type="submit" class="btn btn-primary">atualize os dados</button>
         </form>
     </div>
 

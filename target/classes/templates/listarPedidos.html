@@ -12,23 +12,23 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navBar">
+  <nav class="navbar navbar-expand-lg navbar  bg-danger" th:fragment="navBar">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">LOJA<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Loja<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/formulario_cliente">CLIENTE</a>
+                <a class="nav-link" href="/formulario_cliente">Cliente</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/formulario_item">ITEM</a>
+                <a class="nav-link" href="/formulario_item">Item</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/listar_pedidos">LISTA DE COMPRAS</a>
+                <a class="nav-link" href="/listar_pedidos">Lista de Compras</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">REALIZAR COMPRA</a>
+                    <a class="nav-link" style="font-weight: bold; color: white" href="/realizar_venda">Realiza Compras</a>
                 </li>
 
         </ul>
@@ -38,12 +38,11 @@
     <br>
     <br>
     <div class="container bg-dark">
-            <table class="table" style=" color: white">
+            <table class="table" style=" color: red">
                     <thead>
                       <tr>
                         <th scope="col">PEDIDO</th>
                         <th scope="col">CLIENTE</th>
-                        <th scope="col">DATA - HORA</th>
                         <th scope="col">TOTAL</th>
                       </tr>
                     </thead>
@@ -51,7 +50,6 @@
                       <tr th:each="pedido : ${pedidos}">
                         <th scope="row"> <a th:href="@{'/detalhesDoPedido/' + ${pedido.id}}"><span th:text="${pedido.id}"></span></a> </th>
                         <td><span th:text="${pedido.cliente.nome}"></span></td>
-                        <td><span th:text="${pedido.data}"></span></td>
                         <td><span th:text="'R$ ' + ${pedido.valor}"></span></td>
                       </tr>
                     </tbody>

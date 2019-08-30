@@ -17,9 +17,9 @@ public class ControladorPedido {
     @Autowired
     RepositorioPedido repositorioPedido;
 
-    @RequestMapping("/detalhesDoPedido/{idPedido}")
+    @RequestMapping("/Pedido/{idPedido}")
     public ModelAndView detalhesDoPedido(@PathVariable("idPedido") long id) {
-        ModelAndView retorno = new ModelAndView("detalhesPedido");
+        ModelAndView retorno = new ModelAndView("Pedido");
         Optional<Pedido> pedido = repositorioPedido.findById(id);
 
         retorno.addObject("pedido", pedido.get());

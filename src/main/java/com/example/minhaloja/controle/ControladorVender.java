@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @RestController
-public class ControladorRealizarVenda {
+public class ControladorVender {
 
     @Autowired
     RepositorioPedido repositioPedido;
@@ -32,7 +32,7 @@ public class ControladorRealizarVenda {
 
     @RequestMapping("/realizar_venda")
     public ModelAndView formularioCadastrarPedido() {
-        ModelAndView retorno = new ModelAndView("realizarVenda");
+        ModelAndView retorno = new ModelAndView("vender.html");
         Iterable<Item> itens = repositorioItem.findAll();
         Iterable<Cliente> clientes = repositorioCliente.findAll();
 
